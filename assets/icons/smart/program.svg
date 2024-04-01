@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="program" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M11.1626 3H8.70217H3V9.34996V13.5549H11.1626V3Z" />
+    <path fill="currentColor" d="M11.2524 15.3601H3V21.0001H11.2524V15.3601Z" />
+    <path fill="currentColor" d="M21 10.4399H12.8329V20.9949H21V10.4399Z" />
+    <path fill="currentColor" d="M21 3H12.7476V8.63997H21V3Z" />
+  </symbol>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="slider-arrow-left" viewBox="0 0 48 48">
+    <mask id="mask0_738_600" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+      <rect width="24" height="24" fill="white" />
+    </mask>
+    <g mask="url(#mask0_738_600)">
+      <path d="M15 5L7 12L15 19" fill="#ff0000" stroke-width="2" stroke-linecap="square" />
+    </g>
+  </symbol>
+</svg>

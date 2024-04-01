@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="competence-stroke" viewBox="0 0 24 24">
+    <g>
+      <polygon stroke-width="0.5" stroke="black" fill="currentColor" points="12 14.39 13.13 16.67 15.64 17.04 13.82 18.81 14.25 21.32 12 20.14 9.75 21.32 10.18 18.81 8.36 17.04 10.87 16.67 12 14.39"/>
+      <polygon stroke-width="0.5" stroke="black" fill="currentColor" points="19.36 12.01 20.48 14.3 23 14.66 21.18 16.44 21.61 18.95 19.36 17.76 17.1 18.95 17.53 16.44 15.71 14.66 18.23 14.3 19.36 12.01"/>
+      <polygon stroke-width="0.5" stroke="black" fill="currentColor" points="4.64 12.01 5.77 14.3 8.29 14.66 6.47 16.44 6.9 18.95 4.64 17.76 2.39 18.95 2.82 16.44 1 14.66 3.52 14.3 4.64 12.01"/>
+    </g>
+    <g>
+      <path stroke-width="0.5" stroke="black" fill="currentColor" d="m12,8.35c1.57,0,2.84-1.27,2.84-2.84s-1.27-2.84-2.84-2.84-2.84,1.27-2.84,2.84,1.27,2.84,2.84,2.84Z"/>
+      <path stroke-width="0.5" stroke="black" fill="currentColor" d="m17.1,12.56H6.9c0-1.8,1.97-3.26,4.41-3.26h1.38c2.43,0,4.41,1.46,4.41,3.26Z"/>
+    </g>
+  </symbol>
+</svg>

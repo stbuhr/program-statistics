@@ -1,0 +1,217 @@
+@import "./_sizes.scss";
+
+%kode-input-outline {
+  background: var(--color-background);
+  border: 2px solid var(--color-main);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 10px 15px;
+  color: #757575; //woher kommt diese farbe?
+  height: 46px;
+}
+
+.kode-select {
+  min-width: 256px !important;
+
+  .mdc-line-ripple {
+    display: none;
+  }
+
+  .mdc-text-field {
+    padding: 0px !important;
+  }
+
+  label {
+    top: 0px !important; 
+    position: relative !important;
+  }
+
+  mat-select {
+    background: var(--color-white);
+    border: 3px solid var(--color-grey);
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  mat-select:hover {
+    border-color: var(--color-main);
+  }
+
+  .mat-mdc-select-value {
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .mat-mdc-select-placeholder {
+    color: var(--color-dark-grey) !important;
+    -webkit-text-fill-color: var(--color-dark-grey) !important;
+  }
+
+  .mat-mdc-select-arrow-wrapper {
+    transform: translate(-16px, 0px) !important;
+  }
+}
+
+.kode-option {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-background);
+}
+
+.kode-option:hover {
+  border-color: var(--color-main);
+
+  transition: 200ms;
+}
+
+.mat-mdc-select-panel {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.kode-input {
+  @extend %kode-input-outline;
+}
+
+.kode-searchbar {
+  @extend %kode-input-outline;
+  width: 100%;
+  background: url(/assets/icons/icon_search.svg) no-repeat scroll 7px 7px;
+  padding-left: 30px;
+
+  border-color: var(--color-grey);
+  color: var(--color-main);
+
+  // &:hover {
+  //   border-color: var(--color-active);
+  //   color: var(--color-active);
+  // }
+
+  &:active {
+    border-color: var(--color-main);
+    color: var(--color-main);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-button);
+    // color: var(--color-button);
+  }
+}
+
+.kode-checkbox-label {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+  gap: 0.75rem;
+
+  input[type="checkbox"] {
+    @extend .kode-checkbox;
+  }
+}
+
+.kode-checkbox {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border: 2px solid #949494;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  display: grid;
+  place-content: center;
+
+  &:hover {
+    border-color: var(--color-main);
+    background-color: white;
+  }
+
+  &:active {
+    border-color: var(--color-main);
+    background-color: white;
+    content: url(/assets/icons/check.svg);
+  }
+
+  &:checked {
+    border-color: var(--color-main);
+    background-color: var(--color-main);
+    content: url(/assets/icons/check_white.svg);
+  }
+
+  &:checked:active {
+    border-color: var(--color-main);
+    background-color: white;
+    content: url(/assets/icons/check.svg);
+  }
+}
+
+input[type="radio"] {
+  accent-color: var(--color-dark-purple);
+}
+
+
+.kode-component-color-container {
+  .mat-mdc-form-field-infix {
+    background-color: var(--color-drawer-container) !important;
+  }
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: var(--color-drawer-container) !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    div {
+      background-color: var(--color-drawer-container) !important;
+    }
+  }
+}
+.kode-component-color-light-background {
+  .mat-mdc-form-field-infix {
+    background-color: var(--color-light-background) !important;
+  }
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: var(--color-light-background) !important;
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+}
+.kode-component-color-white {
+  .mat-mdc-form-field-infix {
+    background-color: var(--color-white) !important;
+  }
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: var(--color-white) !important;
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+}
+
+.label-top-0 {
+  //  height: 75px;
+
+  .mat-mdc-text-field-wrapper
+  .mat-mdc-form-field-flex
+  .mat-mdc-floating-label {
+    top: 0px !important;
+  }
+}
+
+@media (max-width: $mobile-max-width){
+  .kode-select {
+    min-width: 0px !important;
+  }
+}
+  
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+
+}
+  
+@media (min-width: $desktop-min-width) {
+
+}

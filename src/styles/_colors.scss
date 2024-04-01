@@ -1,0 +1,52 @@
+:root {
+  --color-dark-purple: hsl(220, 100%, 63%);
+  --color-light-purple: hsl(265, 100%, 71%);
+  --color-purple: hsl(265, 100%, 57%);
+  --color-dark-purple: hsl(261, 100%, 20%);
+  //--color-dark-purplexxx: #24006633;
+  --color-dark-grey: hsl(0, 0%, 13%);
+  --color-grey: hsl(0, 0%, 80%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-red: hsl(348, 100%, 42%);
+  --color-light-red: hsl(349, 100%, 96%);
+  --color-light-grey: hsl(220, 33%, 98%);
+  --color-green: rgb(90, 200, 155);
+  --color-light-green: rgb(222, 243, 234);
+
+  --color-line: hsl(0, 0%, 58%);
+  --color-meta: hsl(184, 15%, 43%);
+  --color-label: hsl(0, 0%, 46%, 1);
+
+  --color-button: var(--color-blue);
+  --color-hover: var(--color-light-purple);
+  --color-active: var(--color-purple);
+  --color-main: var(--color-dark-purple);
+  --color-font: var(--color-dark-grey);
+  --color-disabled: var(--color-grey);
+  --color-background: var(--color-white);
+  --color-error: var(--color-red);
+  --color-error-background: var(--color-light-red);
+  --color-light-background: var(--color-light-grey);
+  --color-drawer-container: transparent;
+
+  --active-background: var(--color-dark-purple);
+  --active-foreground: var(--color-white);
+  --disabled-background: hsl(0, 0%, 80%);
+  --disabled-foreground: hsl(0, 0%, 20%);
+  --light-background: hsl(0, 0%, 90%);
+  --enabled-text: hsl(0, 0%, 20%);
+  --disabled-text: hsl(0, 0%, 62%);
+
+  --very-high-level: #001a7d;
+  --high-level: #054dc2;
+  --medium-level: #4381ff;
+  --low-level: #93bdff;
+
+  --weak-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  --medium-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.2);
+
+  --ready-color: #c92658;
+  --started-color: #f16d49;
+  --registered-color: #ffb349;
+  --not-registered-color: var(--color-light-background);
+}

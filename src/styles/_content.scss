@@ -1,0 +1,300 @@
+@import "./../styles/_sizes.scss";
+
+.icon-block {
+  position: relative;
+  padding-left: 40px;
+}
+
+.icon-block::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-dark-purple);
+}
+
+.icon-text::before {
+  --webkit-mask-image: url(../assets/icons/icon_text.svg);
+  mask-image: url(../assets/icons/icon_text.svg);
+}
+
+.icon-cards::before {
+  --webkit-mask-image: url(../assets/icons/icon_cards.svg);
+  mask-image: url(../assets/icons/icon_cards.svg);
+}
+
+.answers {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.instruction-line {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+}
+
+.box-hidden-mobile {
+  display: inline-block;
+}
+
+.box-hidden-tablet {
+  display: inline-block;
+}
+
+.box-checked,
+.box-unchecked {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin: 0 8px;
+  border-radius: 10%;
+  box-shadow: 1px 1px 5px 0px #d0d0d0;
+}
+
+.box-checked::before,
+.box-unchecked::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  max-width: 22px;
+  height: 22px;
+  width: 50%;
+  border-radius: 50%;
+}
+
+.box-checked::before {
+  border: 3px solid var(--color-dark-purple);
+  background-color: var(--color-dark-purple);
+}
+
+.box-unchecked::before {
+  border: 3px solid var(--color-grey);
+}
+
+.box-error {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, var(--color-red) 0px 0px 0px 3px;
+}
+
+@media (max-width: $tablet-max-width) {
+  .buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .instruction-line {
+    flex-direction: column;
+  }
+
+  .box-checked,
+  .box-unchecked {
+    width: 80%;
+    height: 28px;
+    max-width: 28px;
+    margin: 0px 0.5px;
+  }
+
+  .box-checked::before,
+  .box-unchecked::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    max-width: 22px;
+    height: 14px;
+    width: 50%;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .instruction-line {
+    margin-left: 4px;
+  }
+
+  .box-checked,
+  .box-unchecked {
+    width: 60%;
+    height: 22px;
+    max-width: 22px;
+    margin: 0px 0.5px;
+  }
+
+  .box-checked::before,
+  .box-unchecked::before {
+    content: "";
+    position: absolute;
+    left: 2.5px;
+    top: 2.5px;
+    max-width: 19px;
+    height: 12px;
+    width: 50%;
+    border-radius: 50%;
+  }
+
+  //   .box-checked,
+  //   .box-unchecked {
+  //     width: 100%;
+  //     height: 36px;
+  //     max-width: 36px;
+  //     margin: 0px 0.5px;
+
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //   }
+
+  //   .box-checked::before,
+  //   .box-unchecked::before {
+  //     position: relative;
+  //     display: block;
+  //     left: 0px;
+  //     top: 0px;
+  //     max-width: 40%;
+  //     width: 100%;
+  //     height: 16px;
+  //   }
+
+  //   .box-hidden-mobile {
+  //     // display: none;
+  //   }
+}
+
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+  .box-checked,
+  .box-unchecked {
+    margin: 0px 2px;
+  }
+
+  .box-hidden-tablet {
+    // display: none;
+  }
+}
+
+@media (min-width: $desktop-min-width) {
+}
+
+.print {
+  h1: {
+    font-size: 18;
+  }
+  h2: {
+    font-size: 16;
+  }
+  h3: {
+    font-size: 14;
+  }
+  h4: {
+    font-size: 12;
+  }
+  h5: {
+    font-size: 11;
+  }
+  p: {
+    font-size: 10.5;
+  }
+
+  .centered {
+    text-align: center;
+  }
+}
+
+.left-aligned {
+  text-align: start;
+}
+
+.break-before {
+  break-before: page;
+}
+
+.avoid-break {
+  break-inside: avoid-page;
+}
+
+// Teamrollen
+.teamrole-print-info {
+  display: flex;
+  align-items: flex-start;
+  break-inside: avoid-page;
+}
+
+.teamrole-image-container {
+  img {
+    width: 400px;
+  }
+}
+
+.teamrole-image-container-large {
+  text-align: center;
+  img {
+    width: 300px;
+  }
+}
+
+.quickguide-image-container {
+  text-align: center;
+  img {
+    width: 450px;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .teamrole-print-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamrole-image-container {
+    img {
+      width: 100%;
+      max-width: 256px;
+    }
+  }
+}
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+  .teamrole-print-info {
+    flex-direction: row;
+  }
+
+  .teamrole-image-container {
+    img {
+      width: 256px;
+    }
+  }
+}
+
+@media (min-width: $desktop-min-width) {
+  .teamrole-print-info {
+    flex-direction: row;
+  }
+
+  .teamrole-image-container {
+    img {
+      width: 400px;
+    }
+  }
+}
+
+@media print {
+  .teamrole-print-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamrole-image-container {
+    img {
+      width: 128px;
+    }
+  }
+
+  .teamrole-image-container-large {
+    text-align: center;
+    img {
+      width: 500px;
+    }
+  }
+}

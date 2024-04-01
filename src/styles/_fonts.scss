@@ -1,0 +1,58 @@
+@import "./_sizes.scss";
+
+%standard-text {
+  font-family: Lato, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 180%;
+  color: var(--color-font);
+  letter-spacing: 0.005em;
+}
+
+%header {
+  font-family: Varela Round;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  @extend %header;
+  font-size: 2.25rem;
+  line-height: 2.875rem;
+}
+
+h2 {
+  @extend %header;
+  font-size: 1.75rem;
+  line-height: 2.375rem;
+}
+
+h3 {
+  @extend %header;
+  font-size: 1.25rem;
+  line-height: 28px;
+}
+
+h4 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.sub {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 130%;
+}
+
+p {
+  line-height: 160%;
+}

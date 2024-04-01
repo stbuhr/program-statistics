@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+svg {
+  .line {
+    stroke: var(--color-grey);
+    stroke-width: 2;
+  }
+
+  .vertical-line {
+    stroke: var(--color-grey);
+    stroke-width: 2;
+    stroke-dasharray: 10, 5;
+  }
+
+  .caption {
+    font-size: 1.2rem;
+    fill: var(--color-line);
+  }
+
+  .value {
+    font-size: 1.2rem;
+    fill: var(--color-line);
+    text-anchor: end;
+  }
+
+  .path {
+    fill: none;
+    stroke-width: 6;
+  }
+
+  .registered {
+    stroke: var(--registered-color);
+  }
+
+  .started {
+    stroke: var(--started-color);
+  }
+
+  .finished {
+    stroke: var(--ready-color);
+  }
+}

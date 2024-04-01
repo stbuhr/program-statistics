@@ -1,0 +1,512 @@
+@import "./_sizes.scss";
+
+%kode-button {
+  padding: 18px 30px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 58px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.kode-button {
+  @extend %kode-button;
+  border: 2px solid transparent;
+  background: var(--color-main);
+  color: var(--color-background);
+
+  &:disabled {
+    border: 2px solid transparent;
+    color: var(--color-background);
+    background: var(--color-disabled);
+  }
+
+  &:enabled:hover {
+    border: 2px solid var(--color-main);
+    background: var(--color-background);
+    color: var(--color-main);
+  }
+}
+
+.kode-button--secondary {
+  @extend %kode-button;
+  border: 2px solid var(--color-main);
+  background: var(--color-background);
+  color: var(--color-main);
+
+  &:disabled {
+    border-color: var(--color-disabled);
+    color: var(--color-disabled);
+    background: var(--color-background);
+  }
+
+  &:enabled:hover {
+    border: 2px solid transparent;
+    background: var(--color-main);
+    color: var(--color-background);
+  }
+}
+
+.kode-button--red {
+  @extend %kode-button;
+  border: 2px solid transparent;
+  background: var(--color-red);
+  color: var(--color-background);
+
+  &:disabled {
+    border: 2px solid transparent;
+    color: var(--color-background);
+    background: var(--color-disabled);
+  }
+
+  &:enabled:hover {
+    border: 2px solid var(--color-red);
+    background: var(--color-background);
+    color: var(--color-red);
+  }
+}
+
+%kode-nav-button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: Lato;
+  font-size: 0.688rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.kode-nav-button {
+  @extend %kode-nav-button;
+  color: var(--color-main);
+}
+
+.kode-nav-button--secondary {
+  @extend %kode-nav-button;
+  color: var(--color-background);
+}
+
+.kode-shortcut {
+  // background: rgba(93, 124, 126, 0.15);
+  background: var(--color-main);
+  border-radius: 20px;
+  border: none;
+  //color: #5d7c7e;
+  color: var(--color-background);
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 18px;
+  height: 30px;
+  padding: 6px 20px;
+  white-space: nowrap;
+}
+
+.kode-shortcut:disabled {
+  background: var(--color-disabled);
+  color: var(--color-background);
+  cursor: default;
+}
+
+.tag-button {
+  @extend .kode-shortcut;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  margin: 4px;
+  height: 36px;
+  padding: 4px 12px;
+}
+
+%kode-icon-button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%kode-circle-button {
+  @extend %kode-icon-button;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  height: 44px;
+  width: 44px;
+  border-radius: 100px;
+}
+
+.kode-circle-button {
+  @extend %kode-circle-button;
+  border: 2px solid var(--color-main);
+  background: var(--color-background);
+
+  &:enabled:hover {
+    border: 2px solid transparent;
+    background: var(--color-main);
+  }
+
+  // &:focus {
+  //   background: var(--color-active);
+  //   border: 2px solid var(--color-button);
+  // }
+
+  &:enabled:active {
+    border: 2px solid transparent;
+    background: var(--color-main);
+  }
+}
+
+%progress-dot {
+  cursor: pointer;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 100px;
+}
+
+.progress-dot {
+  @extend %progress-dot;
+  background: var(--color-line);
+
+  &--active {
+    @extend %progress-dot;
+    background: var(--color-background);
+  }
+}
+
+.kode-language-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-button);
+  text-decoration: underline;
+}
+
+.kode-icon-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kode-option-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // gap: 0.75rem;
+  padding: 10px 15px 10px 10px;
+  span {
+    color: #353535;
+    align-items: center;
+    &::before {
+      content: url("/assets/icons/icon_settings.svg");
+      width: 24px;
+      height: 24px;
+      position: relative;
+      right: 0;
+      top: 0.25rem;
+    }
+  }
+
+  &:enabled:hover {
+    background: var(--color-main);
+    border-radius: 4px;
+
+    span {
+      color: white;
+      &::before {
+        width: 24px;
+        height: 24px;
+        content: url("/assets/icons/icon_settings_white.svg");
+      }
+    }
+  }
+
+  &:enabled:active {
+    background: var(--color-main);
+    border-radius: 4px;
+    span {
+      color: white;
+      &::before {
+        width: 24px;
+        height: 24px;
+        content: url("/assets/icons/icon_settings_white.svg");
+      }
+    }
+  }
+}
+
+.kode-logout-button {
+  @extend .kode-option-button;
+  span {
+    &::before {
+      content: url("/assets/icons/icon_ausloggen.svg");
+    }
+  }
+  &:enabled:hover {
+    span {
+      &::before {
+        content: url("/assets/icons/icon_ausloggen_white.svg");
+      }
+    }
+  }
+}
+
+.kode-user-button {
+  @extend .kode-option-button;
+  span {
+    &::before {
+      content: url("/assets/icons/icon_user.svg");
+    }
+  }
+  &:enabled:hover {
+    span {
+      &::before {
+        content: url("/assets/icons/icon_user_white.svg");
+      }
+    }
+  }
+}
+
+.kode-account-button {
+  @extend .kode-option-button;
+  span {
+    &::before {
+      content: url("/assets/icons/icon_account.svg");
+    }
+  }
+  &:enabled:hover {
+    span {
+      &::before {
+        content: url("/assets/icons/icon_account_white.svg");
+      }
+    }
+  }
+}
+
+.kode-news-button {
+  @extend .kode-option-button;
+  span {
+    &::before {
+      content: url("/assets/icons/icon_notification.svg");
+    }
+  }
+  &:enabled:hover {
+    span {
+      &::before {
+        content: url("/assets/icons/icon_notification_white.svg");
+      }
+    }
+  }
+}
+
+.kode-cloud-button {
+  @extend .kode-option-button;
+  span {
+    &::before {
+      content: url("/assets/icons/icon_KODE.svg");
+    }
+  }
+  &:enabled:hover {
+    span {
+      &::before {
+        content: url("/assets/icons/icon_KODE_white.svg");
+      }
+    }
+  }
+}
+
+.kode-close-button {
+  @extend %kode-circle-button;
+
+  background-color: hsl(261, 100%, 20%, 0.1);
+
+  &:enabled:hover {
+    border: 2px solid var(--color-main);
+  }
+
+  // &:focus {
+  //   background-color: hsla(261, 100%, 20%, 0.1);
+  //   border: 2px solid var(--color-button);
+  // }
+
+  &:enabled:hover:active {
+    border: 2px solid transparent;
+    background-color: var(--color-main);
+  }
+}
+
+.kode-progress-button {
+  @extend %kode-circle-button;
+  border: 2px solid var(--color-main);
+  background-color: white;
+  color: var(--color-main);
+
+  &:enabled:active,
+  &--active {
+    border: 2px solid transparent;
+    background-color: var(--color-main);
+    color: white;
+  }
+}
+
+.kode-toggle-switch{
+  --mdc-switch-selected-focus-state-layer-color: var(--color-dark-purple) !important;
+  --mdc-switch-selected-handle-color: var(--color-dark-purple) !important;
+  --mdc-switch-selected-hover-state-layer-color: var(--color-dark-purple) !important;
+  --mdc-switch-selected-pressed-state-layer-color: var(--color-dark-purple) !important;
+
+  --mdc-switch-selected-focus-handle-color: var(--color-dark-purple) !important;
+  --mdc-switch-selected-hover-handle-color: var(--color-dark-purple) !important;
+  --mdc-switch-selected-pressed-handle-color: var(--color-dark-purple) !important;
+
+  --mdc-switch-selected-focus-track-color: var(--color-light-purple) !important;
+  --mdc-switch-selected-hover-track-color: var(--color-light-purple) !important;
+  --mdc-switch-selected-pressed-track-color: var(--color-light-purple) !important;
+  --mdc-switch-selected-track-color: var(--color-light-purple) !important;
+}
+
+.kode-toggle-switch-alternate {
+  @extend .kode-toggle-switch;
+  --mdc-switch-unselected-focus-state-layer-color: var(--color-dark-purple) !important;
+  --mdc-switch-unselected-handle-color: var(--color-dark-purple) !important;
+  --mdc-switch-unselected-hover-state-layer-color: var(--color-dark-purple) !important;
+  --mdc-switch-unselected-pressed-state-layer-color: var(--color-dark-purple) !important;
+
+  --mdc-switch-unselected-focus-handle-color: var(--color-dark-purple) !important;
+  --mdc-switch-unselected-hover-handle-color: var(--color-dark-purple) !important;
+  --mdc-switch-unselected-pressed-handle-color: var(--color-dark-purple) !important;
+  
+  --mdc-switch-unselected-focus-track-color: var(--color-grey) !important;
+  --mdc-switch-unselected-hover-track-color: var(--color-grey) !important;
+  --mdc-switch-unselected-pressed-track-color: var(--color-grey) !important;
+  --mdc-switch-unselected-track-color: var(--color-grey) !important;
+
+  --mdc-switch-selected-focus-track-color: var(--color-grey) !important;
+  --mdc-switch-selected-hover-track-color: var(--color-grey) !important;
+  --mdc-switch-selected-pressed-track-color: var(--color-grey) !important;
+  --mdc-switch-selected-track-color: var(--color-grey) !important;
+
+  .mdc-switch__icons{
+    display: none;
+  }
+}
+
+.toggle-switch-white {
+  --mdc-switch-selected-focus-state-layer-color: var(--color-white) !important;
+  --mdc-switch-selected-handle-color: var(--color-white) !important;
+  --mdc-switch-selected-hover-state-layer-color: var(--color-white) !important;
+  --mdc-switch-selected-pressed-state-layer-color: var(
+    --color-white
+  ) !important;
+
+  --mdc-switch-selected-focus-handle-color: var(--color-white) !important;
+  --mdc-switch-selected-hover-handle-color: var(--color-white) !important;
+  --mdc-switch-selected-pressed-handle-color: var(--color-white) !important;
+
+  --mdc-switch-unselected-focus-state-layer-color: var(
+    --color-white
+  ) !important;
+  --mdc-switch-unselected-handle-color: var(--color-white) !important;
+  --mdc-switch-unselected-hover-state-layer-color: var(
+    --color-white
+  ) !important;
+  --mdc-switch-unselected-pressed-state-layer-color: var(
+    --color-white
+  ) !important;
+
+  --mdc-switch-unselected-focus-handle-color: var(--color-white) !important;
+  --mdc-switch-unselected-hover-handle-color: var(--color-white) !important;
+  --mdc-switch-unselected-pressed-handle-color: var(--color-white) !important;
+}
+
+
+@media (max-width: $mobile-max-width){
+  %kode-button {
+    padding: 16px 16px;
+    min-height: 48px;
+    height: auto;
+    font-size: 0.75rem;
+  }
+
+  %kode-circle-button {
+    @extend %kode-icon-button;
+    height: 36px;
+    width: 36px;
+  }
+
+  // TH: Hover Effekt auf mobile ausschalten wegen #2973
+  .kode-button {
+    &:enabled:hover {
+      border: 2px solid transparent;
+      background: var(--color-main);
+      color: var(--color-background);
+    }
+
+    &:enabled:active {
+      border: 2px solid var(--color-main);
+      background: var(--color-background);
+      color: var(--color-main);
+    }
+  }
+  
+  .kode-button--secondary {
+    &:enabled:hover {
+      border: 2px solid var(--color-main);
+      background: var(--color-background);
+      color: var(--color-main);
+    }
+    
+    &:enabled:active {
+      border: 2px solid transparent;
+      background: var(--color-main);
+      color: var(--color-background);
+    }
+  }
+  
+  .kode-button--red {
+    &:enabled:hover {
+      border: 2px solid transparent;
+      background: var(--color-red);
+      color: var(--color-background);
+    }
+    
+    &:enabled:active {
+      border: 2px solid var(--color-red);
+      background: var(--color-background);
+      color: var(--color-red);
+    }
+  }
+}
+  
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+  %kode-button {
+    min-height: 58px;
+    height: auto;
+  }
+}
+  
+@media (min-width: $desktop-min-width) {
+
+}

@@ -1,0 +1,56 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="progress-diagram"
+  width="900px"
+  viewBox="-80 0 850 440"
+>
+  <!-- Horizontal scale -->
+  <line class="line" x1="-80" y1="400" x2="800" y2="400" />
+  <line class="line" x1="-80" y1="328" x2="800" y2="328" />
+  <line class="line" x1="-80" y1="256" x2="800" y2="256" />
+  <line class="line" x1="-80" y1="184" x2="800" y2="184" />
+  <line class="line" x1="-80" y1="112" x2="800" y2="112" />
+  <line class="line" x1="-80" y1="40" x2="800" y2="40" />
+
+  <text class="caption" x="-70" y="390">0%</text>
+  <text class="caption" x="-70" y="318">20%</text>
+  <text class="caption" x="-70" y="246">40%</text>
+  <text class="caption" x="-70" y="174">60%</text>
+  <text class="caption" x="-70" y="102">80%</text>
+  <text class="caption" x="-70" y="30">100%</text>
+
+  @for (level of levels(); track level) {
+    <text class="value" x="760" [attr.y]="390 - 72 * $index">{{ level }}</text>
+  }
+
+  <!-- Vertical scale -->
+  <line class="vertical-line" x1="0" y1="40" x2="0" y2="400" />
+  <line class="vertical-line" x1="700" y1="40" x2="700" y2="400" />
+  @if (startDate() != currentDate()) {
+    <line
+      class="vertical-line"
+      [attr.x1]="currentX()"
+      y1="40"
+      [attr.x2]="currentX()"
+      y2="400"
+    />
+  }
+
+  <text class="caption" x="680" y="420">
+    {{ endDate() | date: "dd.MM.yyyy" }}
+  </text>
+  <text class="caption" [attr.x]="currentX() - 20" y="30">
+    {{ currentDate() | date: "dd.MM." }}
+  </text>
+
+  @for (step of dateSteps(); track step.x) {
+    <text class="caption" [attr.x]="step.x - 20" y="420">
+      {{ step.date | date: "dd.MM." }}
+    </text>
+  }
+
+  <!-- Assessments -->
+  <path class="path registered" [attr.d]="registeredPath()" />
+  <path class="path started" [attr.d]="startedPath()" />
+  <path class="path finished" [attr.d]="finishedPath()" />
+</svg>

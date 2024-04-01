@@ -1,0 +1,45 @@
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-main);
+  z-index: -1;
+}
+
+.carousel-logo {
+  height: 100%;
+  margin-top: 56px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 48px;
+  width: 121px;
+}
+
+.carousel-header {
+  color: var(--color-background);
+  margin: 16px 28px;
+  text-align: center;
+}
+.carousel-body {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 20px 120px;
+  text-align: center;
+}
+.carousel-image {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 576px;
+}
+.carousel-svg {
+  // padding-left: 100px;
+  // padding-right: 100px;
+  // padding-bottom: 50;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 576px;
+}

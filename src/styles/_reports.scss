@@ -1,0 +1,78 @@
+.team-role-text {
+  padding-top: 1rem;
+
+  .quote {
+    .citation {
+      color: var(--color-dark-purple);
+      page-break-after: avoid;
+    }
+    .citation::before {
+      content: "“";
+    }
+    .citation::after {
+      content: "”";
+    }
+    .author {
+      color: var(--color-meta);
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.kode-atlas-text {
+  h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 38px;
+    color: #7ea9ff;
+  }
+  h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #353535;
+  }
+  p,
+  li {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+    color: #353535;
+  }
+}
+
+.development-text {
+  p.quote {
+    color: #4080ff;
+  }
+}
+
+.kode-multi-page-quick-guide-text {
+  h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 38px;
+    color: #353535;
+  }
+  h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #353535;
+  }
+  p,
+  li {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+    color: #353535;
+  }
+}

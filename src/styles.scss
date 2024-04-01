@@ -1,1 +1,434 @@
+@use "styles/colors";
+@use "styles/fonts";
+@use "styles/buttons";
+@use "styles/inputs";
+@use "styles/reports";
+@use "styles/content";
+@use "styles/carousel";
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+//@import "@angular/material/theming";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+//$custom-typography: mat-typography-config(
+//  $font-family: Lato,
+//);
+// Override typography for all Angular Material, including mat-base-typography and all components.
+//@include angular-material-typography($custom-typography);
+
+$primary: (
+  Main: #240066,
+  Light: #562d95,
+  Dark: #06003b,
+  contrast: (
+    Main: white,
+    Light: white,
+    Dark: white,
+  ),
+);
+
+$kode-primary: mat.define-palette($primary, Main, Light, Dark);
+$kode-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$kode-warn: mat.define-palette(mat.$red-palette);
+
+$kode-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $kode-primary,
+      accent: $kode-accent,
+      warn: $kode-warn,
+    ),
+  )
+);
+
+@import "styles/sizes";
+
 /* You can add global styles to this file, and also import other style files */
+@import "@angular/cdk/overlay-prebuilt.css";
+
+@import "styles/fonts-googleapis-icon-materialicons.scss";
+@import "styles/fonts-googleapis-css-lato.scss";
+@import "styles/fonts-googleapis-css-allison.scss";
+@import "styles/fonts-googleapis-css-varelaround.scss";
+
+@media screen {
+}
+
+@media print {
+}
+
+html {
+  font-size: clamp(12px, 10.4px + 0.4vw, 16px);
+}
+
+// Smartphones
+@media (max-width: $mobile-max-width) {
+  html {
+    //font-size: 12px;
+  }
+}
+
+// Small Screens / Tablets
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+  html {
+    //font-size: 14px;
+  }
+}
+
+// Large Screens / Wurde früher als Standardwert benutzt.
+@media (min-width: $desktop-min-width) {
+  html {
+    //font-size: 16px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  @extend %standard-text;
+  margin: 0;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.text-main {
+  color: var(--color-dark-purple);
+}
+
+h1 {
+  color: var(--color-main);
+}
+
+%kode-result-text {
+  padding: 10px 12px;
+  border-radius: 4px;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.75rem;
+  line-height: 14px;
+}
+
+.kode-error {
+  @extend %kode-result-text;
+  color: var(--color-error);
+  background-color: var(--color-error-background);
+}
+
+.kode-success {
+  @extend %kode-result-text;
+  color: var(--color-green);
+  background-color: var(--color-light-green);
+}
+
+.kode-warning {
+  @extend %kode-result-text;
+  color: black;
+  background-color: #ffde74;
+}
+
+// Scrollbars
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #efefef;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b4b4b4;
+  border-radius: 100vw;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
+}
+
+@supports (scrollbar-color: #b4b4b4 #efefef) {
+  * {
+    scrollbar-color: #b4b4b4 #efefef;
+    scrollbar-width: thin;
+  }
+}
+
+//tables
+.table-input {
+  margin: 0px 8px;
+  div.mat-form-field-underline,
+  div.mdc-line-ripple {
+    display: none;
+  }
+  .mat-mdc-form-field-bottom-align {
+    display: none;
+  }
+}
+
+.full-width-table {
+  width: 100%;
+}
+
+.selectable-table {
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  .mat-row:hover .mat-cell {
+    border-color: var(--color-main);
+  }
+
+  tr,
+  td {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  tr:hover {
+    td {
+      border-bottom: 1px solid var(--color-main) !important;
+      border-top: 1px solid var(--color-main) !important;
+    }
+  }
+
+  .row-selected {
+    td {
+      font-weight: 700;
+      background-color: var(--color-drawer-container);
+      color: rgb(58, 27, 198);
+    }
+  }
+}
+
+.custom-border {
+  border-radius: 5px;
+}
+
+// .mat-table {
+//   background-color: transparent !important;
+// }
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.mat-header-row {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.search {
+  padding-left: 24px;
+  float: left;
+}
+
+.mat-header-cell,
+.mat-mdc-header-cell {
+  background: var(--color-main) !important;
+  color: white !important;
+}
+
+.mat-mdc-cell {
+  border-bottom-color: var(--color-grey);
+}
+
+::ng-deep .mat-sort-header-arrow[style] {
+  // Hide default arrow stem
+  .mat-sort-header-stem {
+    display: none;
+  }
+  .mat-sort-header-indicator {
+    opacity: 1;
+    color: black;
+    font-weight: bold;
+
+    Hide default arrow as its composed of left,
+    right and middle .mat-sort-header-pointer-left,
+    .mat-sort-header-pointer-right,
+    .mat-sort-header-pointer-middle {
+      display: none;
+    }
+  }
+}
+
+[aria-sort="ascending"] {
+  ::ng-deep .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        content: "\25B4";
+        top: -0em;
+        position: absolute;
+        color: white;
+        font-size: 1.25rem;
+        line-height: 10px;
+      }
+    }
+  }
+}
+
+[aria-sort="descending"] {
+  ::ng-deep .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        content: "\25BE";
+        top: -15px;
+        position: absolute;
+        color: white;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+.small-icon > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button-container {
+  margin-top: 64px;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.white-box-shadow {
+  background-color: var(--color-white);
+  box-shadow: var(--weak-shadow);
+
+  border-radius: 4px;
+
+  padding: 32px;
+}
+
+.dark-banner {
+  display: block;
+  align-items: center;
+
+  box-shadow: var(--weak-shadow);
+
+  color: var(--color-white);
+  background-color: var(--color-main);
+  border-radius: 4px;
+  padding: 8px 20px;
+}
+
+h1.dark-banner {
+  border-radius: 8px;
+  padding: 10px 28px;
+}
+
+@media (max-width: $mobile-max-width) {
+  .dark-banner {
+    padding: 6px 16px;
+  }
+
+  h1.dark-banner {
+    padding: 6px 16px;
+  }
+}
+
+.invert-color {
+  color: var(--color-white);
+  background-color: var(--color-main);
+}
+
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container-child {
+  flex: 1;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex-column-gap {
+  @extend .flex-column;
+  gap: 16px;
+}
+
+.register-site-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-light-background);
+
+  height: 100%;
+  padding: 80px;
+}
+
+div.mdc-line-ripple::before,
+div.mat-form-field-underline {
+  border-color: var(--color-line);
+}
+
+.mat-expansion-panel {
+  box-shadow: none !important;
+  background: transparent;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 8px 16px !important;
+}
+
+// Wegen der Umstellung von Legacy-Komponenten sind diese Klassen nötig:
+mat-form-field {
+  // margin: 20px 0px 4px 0px;
+  .mdc-text-field {
+    overflow: visible;
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+  ::ng-deep .mat-drawer-container {
+    background-color: var(--color-drawer-container) !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+  }
+}

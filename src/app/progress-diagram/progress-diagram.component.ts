@@ -7,11 +7,6 @@ import {
   signal,
 } from '@angular/core';
 
-interface Point {
-  x: number;
-  y: number;
-}
-
 interface DateStep {
   date: Date;
   x: number;
@@ -41,7 +36,7 @@ export class ProgressDiagramComponent {
   finished = input<ProgressPoint[]>([]);
 
   currentDate = signal<Date>(new Date(new Date().setHours(0, 0, 0, 0)));
-  scaleSteps = signal<number>(7);
+  scaleSteps = 7;
   currentX = computed(() => {
     const startDate = this.startDate().getTime();
     const endDate = this.endDate().getTime();
@@ -64,11 +59,11 @@ export class ProgressDiagramComponent {
     const duration =
       (this.endDate().getTime() - this.startDate().getTime()) /
       (24 * 60 * 60 * 1000);
-    const step = Math.round(duration / this.scaleSteps() + 0.4);
+    const step = Math.round(duration / this.scaleSteps + 0.4);
     const deltaX = 700 / (duration / step);
 
     const steps: DateStep[] = [];
-    for (let i = 0; i < this.scaleSteps(); i += 1) {
+    for (let i = 0; i < this.scaleSteps; i += 1) {
       var x = i * deltaX;
       var date = new Date(
         this.startDate().getTime() + i * step * 24 * 60 * 60 * 1000,

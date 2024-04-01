@@ -13,19 +13,21 @@ import {
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'program-statistics';
+  total = 53;
   startDate = new Date('2024-03-10');
-  endDate = new Date('2024-04-10');
+  endDate = new Date('2024-04-08');
   registered: ProgressPoint[] = [
-    { date: new Date('2024-03-12'), progress: 35 },
+    { date: new Date('2024-03-12'), progress: 25 },
     { date: new Date('2024-03-17'), progress: 38 },
     { date: new Date('2024-03-25'), progress: 38 },
     { date: new Date('2024-04-01'), progress: 42 },
   ];
   started: ProgressPoint[] = [
     { date: new Date('2024-03-12'), progress: 12 },
+    { date: new Date('2024-03-14'), progress: 20 },
     { date: new Date('2024-03-17'), progress: 24 },
     { date: new Date('2024-03-25'), progress: 24 },
+    { date: new Date('2024-03-28'), progress: 29 },
     { date: new Date('2024-04-01'), progress: 31 },
   ];
   finished: ProgressPoint[] = [

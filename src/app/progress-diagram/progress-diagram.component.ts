@@ -33,7 +33,7 @@ export interface ProgressPoint {
 export class ProgressDiagramComponent {
   startDate = input<Date>(new Date());
   endDate = input<Date>(
-    new Date(new Date().setMonth(this.startDate().getMonth() + 1))
+    new Date(new Date().setMonth(this.startDate().getMonth() + 1)),
   );
   total = input<number>(100);
   registered = input<ProgressPoint[]>([]);
@@ -64,16 +64,22 @@ export class ProgressDiagramComponent {
     const duration =
       (this.endDate().getTime() - this.startDate().getTime()) /
       (24 * 60 * 60 * 1000);
-    const step = Math.round(duration / this.scaleSteps());
+    const step = Math.round(duration / this.scaleSteps() + 0.4);
     const deltaX = 700 / (duration / step);
 
     const steps: DateStep[] = [];
-    for (let i = 0; i <= this.scaleSteps(); i += 1) {
+    for (let i = 0; i < this.scaleSteps(); i += 1) {
+      var x = i * deltaX;
+      var date = new Date(
+        this.startDate().getTime() + i * step * 24 * 60 * 60 * 1000,
+      );
+      if (date > this.endDate()) {
+        x = 700;
+        date = this.endDate();
+      }
       steps.push({
-        x: i * deltaX,
-        date: new Date(
-          this.startDate().getTime() + i * step * 24 * 60 * 60 * 1000
-        ),
+        x: x,
+        date: date,
       });
     }
     return steps;

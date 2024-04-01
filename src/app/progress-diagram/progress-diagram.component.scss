@@ -17,6 +17,13 @@ svg {
   .caption {
     font-size: 1.2rem;
     fill: var(--color-line);
+    text-anchor: middle;
+  }
+
+  .percentage {
+    font-size: 1.2rem;
+    fill: var(--color-line);
+    text-anchor: end;
   }
 
   .value {
@@ -28,6 +35,7 @@ svg {
   .path {
     fill: none;
     stroke-width: 6;
+    stroke-linecap: round;
   }
 
   .registered {
